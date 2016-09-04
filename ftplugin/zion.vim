@@ -1,4 +1,4 @@
-setlocal makeprg=./zion\ compile\ %<
+setlocal makeprg=./zionc\ compile\ %<
 setlocal smartindent
 
 " if you like folding...
