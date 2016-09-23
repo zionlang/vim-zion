@@ -2,7 +2,7 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax keyword zionStatement return var mutate set change unreachable yield
+syntax keyword zionStatement return var
 syntax match zionStatement "\v<def>"
 highlight link zionStatement Statement
 
@@ -11,7 +11,7 @@ syntax match zionTypedef "\v<type> +<alias>"
 syntax match zionTypedef "\v<type> +<def>"
 syntax match zionTypedef "\v<can> +<be>"
 
-syntax keyword zionTypedef alias has is matches
+syntax keyword zionTypedef has is matches
 highlight link zionTypedef Typedef
 
 syntax keyword zionKeyword while for break continue pass
@@ -23,15 +23,12 @@ highlight link zionConditional Conditional
 syntax keyword zionPreproc link module to
 highlight link zionPreproc Preproc
 
-syntax keyword zionFunction main print mask class mutation read write push pop
+syntax keyword zionFunction main print typeid
 highlight link zionFunction Function
 
 syntax keyword zionType int str bool float void ref
 syntax match zionType "\v<any>( +<\w+>)?"
 highlight link zionType Type
-
-syntax keyword zionStorageClass named mutable lazy
-highlight link zionStorageClass StorageClass
 
 syntax match zionComment "\v#.*$"
 highlight link zionComment Comment
