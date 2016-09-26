@@ -1,5 +1,6 @@
 setlocal makeprg=./zionc\ compile\ %<
-setlocal smartindent
+setlocal nosmartindent
+setlocal autoindent
 
 " if you like folding...
 " setlocal foldmethod=indent
