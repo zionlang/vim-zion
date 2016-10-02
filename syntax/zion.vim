@@ -7,9 +7,7 @@ syntax match zionStatement "\v<def>"
 highlight link zionStatement Statement
 
 syntax match zionTypedef "\v<type>"
-syntax match zionTypedef "\v<type> +<alias>"
-syntax match zionTypedef "\v<type> +<def>"
-syntax match zionTypedef "\v<can> +<be>"
+syntax match zionTypedef "\v<tag>"
 
 syntax keyword zionTypedef has is matches
 highlight link zionTypedef Typedef
