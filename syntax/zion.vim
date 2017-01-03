@@ -31,7 +31,7 @@ highlight link zionType Type
 syntax match zionComment "\v#.*$"
 highlight link zionComment Comment
 
-syntax keyword zionConstant true false null self
+syntax keyword zionConstant true false nil self
 highlight link zionConstant Constant
 
 syntax keyword zionOperator and or not in
