@@ -15,7 +15,7 @@ highlight link zionTypedef Typedef
 syntax keyword zionKeyword while for break continue pass
 highlight link zionKeyword Keyword
 
-syntax keyword zionConditional when if else elif match case
+syntax keyword zionConditional with when if else elif match case
 highlight link zionConditional Conditional
 
 syntax keyword zionPreproc link module to
@@ -24,7 +24,7 @@ highlight link zionPreproc Preproc
 syntax keyword zionFunction main print typeid
 highlight link zionFunction Function
 
-syntax keyword zionType int str bool float void ref
+syntax keyword zionType int str bool float void ref as
 syntax match zionType "\v<any>( +<\w+>)?"
 highlight link zionType Type
 
