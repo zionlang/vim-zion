@@ -32,7 +32,6 @@ highlight link llzComment Comment
 syntax keyword llzConstant nil
 highlight link llzConstant Constant
 
-syntax keyword llzOperator
 syntax match llzOperator "\v\*"
 syntax match llzOperator "\v\;"
 syntax match llzOperator "\v\["
