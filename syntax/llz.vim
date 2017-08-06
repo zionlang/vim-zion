@@ -8,7 +8,7 @@ highlight link llzStatement Statement
 
 syntax match llzTypedef "\v<type>"
 
-syntax keyword llzTypedef struct polymorph
+syntax keyword llzTypedef is has tag
 highlight link llzTypedef Typedef
 
 syntax keyword llzKeyword loop break continue
