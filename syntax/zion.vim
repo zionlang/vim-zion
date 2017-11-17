@@ -9,7 +9,19 @@ highlight link zionStatement Statement
 syntax match zionTypedef "\v<type>"
 syntax match zionTypedef "\v<tag>"
 
-syntax keyword zionTypedef has is matches
+syntax keyword zionTypedef has is matches struct
+	\ __int__ 
+	\ __str__
+	\ __int8__
+	\ __int16__
+	\ __int32__
+	\ __int64__
+	\ __float__
+	\ __bool__
+	\ __bytes__
+	\ __true__
+	\ __false__
+	\ __utf8__
 highlight link zionTypedef Typedef
 
 syntax keyword zionKeyword while for break continue pass
@@ -21,7 +33,27 @@ highlight link zionConditional Conditional
 syntax keyword zionPreproc link module to
 highlight link zionPreproc Preproc
 
-syntax keyword zionFunction main print typeid
+syntax keyword zionFunction main
+	\ print
+	\ typeid
+	\ assert
+	\ static_print
+	\ typeinfo
+	\ __get_typeid__
+	\ __not__
+	\ __box__
+	\ __finalize__
+	\ __mod__
+	\ __plus__
+	\ __minus__
+	\ __negative__
+	\ __divide__
+	\ __eq__
+	\ __ineq__
+	\ __lt__
+	\ __lte_
+	\ __gt__
+	\ __gte_
 highlight link zionFunction Function
 
 syntax keyword zionType int str bool float void ref as
