@@ -30,6 +30,10 @@ highlight link zionKeyword Keyword
 syntax keyword zionConditional with when if else elif match case
 highlight link zionConditional Conditional
 
+syntax match zionNumber /\v<[0-9]+>/
+syntax match zionNumber /\v<[0-9]+r>/
+highlight link zionNumber Number
+
 syntax keyword zionPreproc link module to
 highlight link zionPreproc Preproc
 
@@ -63,7 +67,7 @@ highlight link zionType Type
 syntax match zionComment "\v#.*$"
 highlight link zionComment Comment
 
-syntax keyword zionConstant true false nil self
+syntax keyword zionConstant true false nil
 highlight link zionConstant Constant
 
 syntax keyword zionOperator and or not in
