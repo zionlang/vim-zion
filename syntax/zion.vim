@@ -9,19 +9,7 @@ highlight link zionStatement Statement
 syntax match zionTypedef "\v<type>"
 syntax match zionTypedef "\v<tag>"
 
-syntax keyword zionTypedef has is matches struct
-	\ __int__ 
-	\ __str__
-	\ __int8__
-	\ __int16__
-	\ __int32__
-	\ __int64__
-	\ __float__
-	\ __bool__
-	\ __bytes__
-	\ __true__
-	\ __false__
-	\ __utf8__
+syntax keyword zionTypedef has is matches struct as
 highlight link zionTypedef Typedef
 
 syntax keyword zionKeyword while for break continue pass
@@ -34,15 +22,22 @@ syntax match zionNumber /\v<[0-9]+>/
 syntax match zionNumber /\v<[0-9]+r>/
 highlight link zionNumber Number
 
-syntax keyword zionPreproc link module to
+syntax keyword zionPreproc link module to std
 highlight link zionPreproc Preproc
 
 syntax keyword zionFunction main
 	\ print
+	\ resize
+	\ append
+	\ len
 	\ typeid
 	\ assert
 	\ static_print
+	\ breakpoint
+	\ sizeof
 	\ typeinfo
+	\ join
+	\ alloc
 	\ __get_typeid__
 	\ __not__
 	\ __box__
@@ -52,15 +47,37 @@ syntax keyword zionFunction main
 	\ __minus__
 	\ __negative__
 	\ __divide__
+	\ __positive__
+	\ __times__
 	\ __eq__
 	\ __ineq__
 	\ __lt__
-	\ __lte_
+	\ __lte__
 	\ __gt__
-	\ __gte_
+	\ __gte__
 highlight link zionFunction Function
 
-syntax keyword zionType int str bool float void ref as
+syntax keyword zionType
+	\ int
+	\ bool
+	\ float
+	\ void
+	\ str
+	\ bytes
+	\ True
+	\ False
+	\ __int__
+	\ __char__
+	\ __int8__
+	\ __int16__
+	\ __int32__
+	\ __int64__
+	\ __float__
+	\ __bool__
+	\ __bytes__
+	\ __true__
+	\ __false__
+	\ __utf8__
 syntax match zionType "\v<any>( +<\w+>)?"
 highlight link zionType Type
 

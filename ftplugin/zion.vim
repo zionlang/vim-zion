@@ -1,4 +1,4 @@
-setlocal makeprg=./zionc\ compile\ %<
+setlocal makeprg=./zion\ compile\ %<
 setlocal nosmartindent
 setlocal autoindent
 setlocal noexpandtab
