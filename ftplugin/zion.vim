@@ -2,6 +2,7 @@ setlocal makeprg=./zion\ compile\ %<
 setlocal nosmartindent
 setlocal autoindent
 setlocal noexpandtab
+setlocal textwidth=0
 
 " if you like folding...
 " setlocal foldmethod=indent
