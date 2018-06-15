@@ -2,20 +2,33 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax keyword zionStatement return var let __unreachable__
-syntax match zionStatement "\v<def>"
+syntax keyword zionStatement return var let __unreachable__ fn macro
 highlight link zionStatement Statement
 
 "syntax match zionTypedef "\v<type>"
 "syntax match zionTypedef "\v<tag>"
 
-syntax keyword zionTypedef has is matches struct as where type tag enum data
+syntax keyword zionTypedef has is matches struct as where type
 highlight link zionTypedef Typedef
 
-syntax keyword zionKeyword while for break continue and or not in assert gc
+syntax keyword zionKeyword
+	\ and
+	\ assert
+	\ break
+	\ continue
+	\ defer
+	\ do
+	\ for
+	\ gc
+	\ in
+	\ not
+	\ or
+	\ while
+	\ with
+
 highlight link zionKeyword Keyword
 
-syntax keyword zionConditional with when if else elif match case
+syntax keyword zionConditional if else elif match
 highlight link zionConditional Conditional
 
 syntax match zionNumber /\v<[0-9]+>/
@@ -43,14 +56,12 @@ syntax keyword zionFunction main
 	\ hash
 	\ wcstombs
 	\ panic
+    \ split
 	\ c_str
 	\ __int__
 	\ __getslice__
-	\ __iter_begin__
-	\ __iter_end__
-	\ __iter_valid__
-	\ __iter_item__
-	\ __iterate__
+	\ __iter__
+	\ __next__
 	\ __float__
 	\ __get_typeid__
 	\ __not__
@@ -79,15 +90,15 @@ highlight link zionFunction Function
 
 syntax keyword zionType
 	\ int
-	\ posix_int
 	\ bool
 	\ float
 	\ Vector
+	\ Map
 	\ void
-	\ Str
+	\ str
 	\ uuid
 	\ UUID
-	\ Bytes
+	\ bytes
 	\ signed
 	\ unsigned
 	\ FILE
@@ -103,7 +114,6 @@ syntax keyword zionType
 	\ ssize_t
 	\ uint
 	\ char
-	\ Char
 	\ int8
 	\ uint8
 	\ int16
@@ -121,7 +131,7 @@ highlight link zionType Type
 syntax match zionComment "\v#.*$"
 highlight link zionComment Comment
 
-syntax keyword zionConstant zero true false null stdin stdout stderr
+syntax keyword zionConstant true false null stdin stdout stderr
 highlight link zionConstant Constant
 
 " syntax keyword zionOperator and or not in

@@ -1,4 +1,4 @@
-setlocal makeprg=./zion\ compile\ %<
+setlocal makeprg=zion\ compile\ %<
 setlocal textwidth=0
 
 " if you like folding...
