@@ -2,13 +2,10 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax keyword zionStatement return var let __unreachable__ fn macro
+syntax keyword zionStatement return var let __unreachable__ fn fix
 highlight link zionStatement Statement
 
-"syntax match zionTypedef "\v<type>"
-"syntax match zionTypedef "\v<tag>"
-
-syntax keyword zionTypedef has is matches struct as where type
+syntax keyword zionTypedef has is as struct data newtype instance class
 highlight link zionTypedef Typedef
 
 syntax keyword zionKeyword
@@ -38,100 +35,88 @@ highlight link zionNumber Number
 syntax keyword zionPreproc get link module to std global
 highlight link zionPreproc Preproc
 
-syntax keyword zionFunction main
-	\ print
-	\ append
-	\ reserve
-	\ resize
-	\ len
-	\ typeid
-	\ static_print
-	\ breakpoint
-	\ sizeof
-	\ typeinfo
-	\ join
-	\ strip
-	\ alloc
-	\ concat
-	\ hash
-	\ wcstombs
-	\ panic
-    \ split
-	\ c_str
-	\ __int__
-	\ __getslice__
-	\ __iter__
-	\ __next__
-	\ __float__
-	\ __get_typeid__
-	\ __not__
-	\ __box__
-	\ __unbox__
-	\ __finalize__
-	\ __mod__
-	\ __plus__
-	\ __bitwise_or__
-	\ __bitwise_and__
-	\ __backslash__
-	\ __minus__
-	\ __negative__
-	\ __divide__
-	\ __positive__
-	\ __times__
-	\ __eq__
-	\ __ineq__
-	\ __lt__
-	\ __lte__
-	\ __gt__
-	\ __gte__
-	\ __shl__
-	\ __shr__
+syntax keyword zionFunction
+			\ __backslash__
+			\ __bitwise_and__
+			\ __bitwise_or__
+			\ __box__
+			\ __divide__
+			\ __eq__
+			\ __finalize__
+			\ __float__
+			\ __get_typeid__
+			\ __getslice__
+			\ __gt__
+			\ __gte__
+			\ __hash__
+			\ __ineq__
+			\ __int__
+			\ __lt__
+			\ __lte__
+			\ __minus__
+			\ __mod__
+			\ __negative__
+			\ __next__
+			\ __not__
+			\ __plus__
+			\ __positive__
+			\ __shl__
+			\ __shr__
+			\ __times__
+			\ __unbox__
+			\ alloc
+			\ append
+			\ breakpoint
+			\ c_str
+			\ concat
+			\ enumerate
+			\ hash
+			\ iter
+			\ join
+			\ len
+			\ main
+			\ new
+			\ panic
+			\ print
+			\ reserve
+			\ resize
+			\ sizeof
+			\ split
+			\ static_print
+			\ strip
+			\ typeid
+			\ typeinfo
+			\ typeof
+			\ wcstombs
 highlight link zionFunction Function
 
 syntax keyword zionType
-	\ int
-	\ bool
-	\ float
+	\ Int
+	\ Bool
+	\ Float
 	\ Vector
 	\ Map
-	\ void
-	\ str
-	\ uuid
-	\ UUID
-	\ bytes
-	\ signed
-	\ unsigned
-	\ FILE
-	\ var_t
-	\ type_info_t
-	\ integer
-	\ signed_t
-	\ unsigned_t
-	\ int
-	\ typeid
-	\ uint
-	\ size_t
-	\ ssize_t
-	\ uint
-	\ char
-	\ int8
-	\ uint8
-	\ int16
-	\ uint16
-	\ int32
-	\ uint32
-	\ int64
-	\ uint64
-	\ float
+	\ String
+	\ Functor
+	\ Either
+	\ Maybe
+	\ Eq
+	\ Ord
+	\ Num
+	\ Ref
+	\ Ptr
+	\ Array
 
 syntax match zionType "\v<any>( +<\w+>)?"
 syntax match zionType "\[[^\]]+\]"
 highlight link zionType Type
 
-syntax match zionComment "\v#.*$"
-highlight link zionComment Comment
+" highlight link zionMultiLineComment Comment
 
-syntax keyword zionConstant true false null stdin stdout stderr
+" syntax match zionComment "\v#.*$"
+" highlight link zionComment Comment
+
+syntax keyword zionConstant True False null stdin stdout stderr Left Right
 highlight link zionConstant Constant
 
 " syntax keyword zionOperator and or not in
@@ -174,5 +159,8 @@ syntax match zionTesting "\v# reject: .*"
 syntax match zionTesting "\v# error: .*"
 syntax match zionTesting "\v# unseen: .*"
 highlight link zionTesting Operator
+
+syntax region zionMultiComment start="/\*" end="\*/"
+hi def link zionMultiComment Comment
 
 let b:current_syntax = "zion"
