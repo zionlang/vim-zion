@@ -32,19 +32,13 @@ syntax match zionNumber /\v<[0-9]+>/
 syntax match zionNumber /\v<[0-9]+r>/
 highlight link zionNumber Number
 
-syntax keyword zionPreproc get link module to std global
+syntax keyword zionPreproc import link pkg export
 highlight link zionPreproc Preproc
 
 syntax keyword zionFunction
 			\ __backslash__
 			\ __bitwise_and__
 			\ __bitwise_or__
-			\ __box__
-			\ __divide__
-			\ __eq__
-			\ __finalize__
-			\ __float__
-			\ __get_typeid__
 			\ __getslice__
 			\ __gt__
 			\ __gte__
@@ -92,6 +86,7 @@ highlight link zionFunction Function
 
 syntax keyword zionType
 	\ Int
+	\ Char
 	\ Bool
 	\ Float
 	\ Vector
@@ -103,9 +98,8 @@ syntax keyword zionType
 	\ Eq
 	\ Ord
 	\ Num
+	\ Addition
 	\ Ref
-	\ Ptr
-	\ Array
 
 syntax match zionType "\v<any>( +<\w+>)?"
 syntax match zionType "\[[^\]]+\]"
@@ -113,8 +107,8 @@ highlight link zionType Type
 
 " highlight link zionMultiLineComment Comment
 
-" syntax match zionComment "\v#.*$"
-" highlight link zionComment Comment
+syntax match zionComment "\v#.*$"
+highlight link zionComment Comment
 
 syntax keyword zionConstant True False null stdin stdout stderr Left Right
 highlight link zionConstant Constant
@@ -152,12 +146,10 @@ highlight link zionOperator Operator
 syntax region zionString start=/\v"/ skip=/\v\\./ end=/\v"/
 highlight link zionString String
 
-syntax match zionTesting "\v# test: skip"
-syntax match zionTesting "\v# test: pass"
+syntax match zionTesting "\v# test: .*"
 syntax match zionTesting "\v# expect: .*"
 syntax match zionTesting "\v# reject: .*"
 syntax match zionTesting "\v# error: .*"
-syntax match zionTesting "\v# unseen: .*"
 highlight link zionTesting Operator
 
 syntax region zionMultiComment start="/\*" end="\*/"
