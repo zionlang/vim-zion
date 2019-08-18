@@ -36,32 +36,8 @@ syntax keyword zionPreproc import link pkg export
 highlight link zionPreproc Preproc
 
 syntax keyword zionFunction
-			\ __backslash__
-			\ __bitwise_and__
-			\ __bitwise_or__
-			\ __getslice__
-			\ __gt__
-			\ __gte__
-			\ __hash__
-			\ __ineq__
-			\ __int__
-			\ __lt__
-			\ __lte__
-			\ __minus__
-			\ __mod__
-			\ __negative__
-			\ __next__
-			\ __not__
-			\ __plus__
-			\ __positive__
-			\ __shl__
-			\ __shr__
-			\ __times__
-			\ __unbox__
 			\ alloc
 			\ append
-			\ breakpoint
-			\ c_str
 			\ concat
 			\ enumerate
 			\ hash
@@ -78,10 +54,7 @@ syntax keyword zionFunction
 			\ split
 			\ static_print
 			\ strip
-			\ typeid
-			\ typeinfo
-			\ typeof
-			\ wcstombs
+			\ chomp
 highlight link zionFunction Function
 
 syntax keyword zionType
@@ -91,14 +64,13 @@ syntax keyword zionType
 	\ Float
 	\ Vector
 	\ Map
+	\ Set
 	\ String
-	\ Functor
 	\ Either
 	\ Maybe
 	\ Eq
 	\ Ord
 	\ Num
-	\ Addition
 	\ Ref
 
 syntax match zionType "\v<any>( +<\w+>)?"
