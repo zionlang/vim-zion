@@ -5,8 +5,94 @@ endif
 syntax keyword zionStatement return var let __unreachable__ fn fix
 highlight link zionStatement Statement
 
-syntax keyword zionTypedef has is as struct data newtype instance class
+syntax keyword zionTypedef has is as struct data newtype instance class default
 highlight link zionTypedef Typedef
+
+highlight link zionKeyword Keyword
+
+syntax keyword zionConditional if else elif match
+highlight link zionConditional Conditional
+
+syntax match zionBang /\!/
+highlight link zionBang Error
+
+syntax match zionDollar /\$[0-9]*/
+highlight link zionDollar Statement
+
+syntax match zionNumber /\v<[0-9]+>/
+highlight link zionNumber Number
+
+syntax keyword zionPreproc import link pkg export
+highlight link zionPreproc Preproc
+
+" To generate the basic list of functions for syntax highlighting, run this occasionally:
+" grep -o -Ee '\bfn [a-z_0-9]+\b' lib/std.zion | sort | uniq | awk '{print "\t\t\\ " $2}'
+syntax keyword zionFunction
+		\ abs
+		\ alloc
+		\ append
+		\ cap
+		\ chomp
+		\ compare
+		\ compose
+		\ concat
+		\ enumerate
+		\ filter
+		\ fmap
+		\ from_int
+		\ get
+		\ get_indexed_item
+		\ get_slice_from
+		\ get_slice_from_to
+		\ has_prefix
+		\ has_substring
+		\ has_suffix
+		\ id
+		\ in
+		\ insert
+		\ float
+		\ int
+		\ isspace
+		\ isdigit
+		\ isalpha
+		\ islower
+		\ isupper
+		\ tolower
+		\ toupper
+		\ iter
+		\ join
+		\ len
+		\ load_value
+		\ map
+		\ max
+		\ max_bound
+		\ min
+		\ min_bound
+		\ negate
+		\ new
+		\ not
+		\ not_in
+		\ panic
+		\ print
+		\ putch
+		\ range
+		\ remove
+		\ replace
+		\ repr
+		\ reserve
+		\ reset
+		\ resize
+		\ resource_acquired
+		\ serialize
+		\ set_indexed_item
+		\ store_value
+		\ str
+		\ strip
+		\ split
+		\ strlen
+		\ strstr_index
+		\ vector
+highlight link zionFunction Function
 
 syntax keyword zionKeyword
 	\ and
@@ -23,40 +109,11 @@ syntax keyword zionKeyword
 	\ while
 	\ with
 
-highlight link zionKeyword Keyword
+syntax keyword zionDataCtor
+	\ Just
+	\ Nothing
 
-syntax keyword zionConditional if else elif match
-highlight link zionConditional Conditional
-
-syntax match zionNumber /\v<[0-9]+>/
-syntax match zionNumber /\v<[0-9]+r>/
-highlight link zionNumber Number
-
-syntax keyword zionPreproc import link pkg export
-highlight link zionPreproc Preproc
-
-syntax keyword zionFunction
-			\ alloc
-			\ append
-			\ concat
-			\ enumerate
-			\ hash
-			\ iter
-			\ join
-			\ len
-			\ main
-			\ new
-			\ panic
-			\ print
-			\ reserve
-			\ resize
-			\ sizeof
-			\ split
-			\ static_print
-			\ strip
-			\ chomp
-highlight link zionFunction Function
-
+highlight link zionDataCtor Type
 syntax keyword zionType
 	\ Int
 	\ Char
@@ -73,8 +130,6 @@ syntax keyword zionType
 	\ Num
 	\ Ref
 
-syntax match zionType "\v<any>( +<\w+>)?"
-syntax match zionType "\[[^\]]+\]"
 highlight link zionType Type
 
 " highlight link zionMultiLineComment Comment
@@ -88,6 +143,7 @@ highlight link zionConstant Constant
 " syntax keyword zionOperator and or not in
 syntax match zionOperator "\v\*"
 syntax match zionOperator "\v\;"
+syntax match zionOperator "\v\|"
 syntax match zionOperator "\v\["
 syntax match zionOperator "\v\]"
 syntax match zionOperator "\v\{"
@@ -117,6 +173,9 @@ highlight link zionOperator Operator
 
 syntax region zionString start=/\v"/ skip=/\v\\./ end=/\v"/
 highlight link zionString String
+
+syntax region zionChar start=/\v'/ skip=/\v\\./ end=/\v'/
+highlight link zionChar String
 
 syntax match zionTesting "\v# test: .*"
 syntax match zionTesting "\v# expect: .*"

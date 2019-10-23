@@ -1,8 +1,6 @@
 setlocal makeprg=zion\ %<
-setlocal textwidth=0
-
-" if you like folding...
-" setlocal foldmethod=indent
-" setlocal foldignore=
+setlocal textwidth=80
+setlocal ts=2 sw=2 expandtab
 
 nmap <F7> :!clear <CR><CR> :make<CR><CR>zz:cw<CR>
+noremap <Leader><Leader> vi}=
