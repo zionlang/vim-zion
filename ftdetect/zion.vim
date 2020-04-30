@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.zion set filetype=zion
+au BufRead,BufNewFile *.zion setlocal filetype=zion

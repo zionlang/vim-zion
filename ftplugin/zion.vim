@@ -1,4 +1,4 @@
-setlocal makeprg=zion\ %<
+setlocal makeprg=zion\ ll\ %<
 setlocal textwidth=80
 setlocal ts=2 sw=2 expandtab
 
