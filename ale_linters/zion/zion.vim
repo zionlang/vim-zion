@@ -2,7 +2,7 @@
 " Description: zion linting for Zion files
 
 call ale#Set('zion_zion_executable', 'zion')
-call ale#Set('zion_zion_options', 'compile')
+call ale#Set('zion_zion_options', 'll')
 
 function! ale_linters#zion#zion#GetCommand(buffer) abort
     let l:options = ale#Var(a:buffer, 'zion_zion_options')

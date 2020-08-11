@@ -2,7 +2,7 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax keyword zionStatement return var let __unreachable__ fn fix
+syntax keyword zionStatement return var let __unreachable__ fn ffi
 highlight link zionStatement Statement
 
 syntax keyword zionTypedef has is as struct data newtype instance class default
@@ -14,7 +14,7 @@ syntax keyword zionConditional if else elif match
 highlight link zionConditional Conditional
 
 syntax match zionBang /\!/
-highlight link zionBang Error
+highlight link zionBang Statement
 
 syntax match zionDollar /\$[0-9]*/
 highlight link zionDollar Statement
