@@ -102,12 +102,12 @@ syntax keyword zionKeyword
 	\ defer
 	\ do
 	\ for
-	\ gc
 	\ in
 	\ not
 	\ or
 	\ while
 	\ with
+	\ when
 
 syntax keyword zionDataCtor
 	\ Just
